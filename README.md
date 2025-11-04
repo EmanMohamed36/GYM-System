@@ -1,2 +1,2 @@
 # GYM-System
-EFCore , MVC, 3-Layer Architecture 
+ASP.NET, EFCore , MVC, 3-Layer Architecture 
