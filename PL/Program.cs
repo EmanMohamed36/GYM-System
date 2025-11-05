@@ -1,4 +1,8 @@
+using BLL.MappingProfiles;
 using DAL.Data;
+using DAL.Repositories.Classes;
+using DAL.Repositories.Interfaces;
+using DAL.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 namespace PL
@@ -18,6 +22,15 @@ namespace PL
                 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            #endregion
+
+            #region Resgitered Services
+            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+            #endregion
+
+            #region MappingService
+
+            builder.Services.AddAutoMapper((action) => { }, typeof(AssemblyReferenceMapper).Assembly);
             #endregion
 
             var app = builder.Build();

@@ -29,5 +29,8 @@ namespace DAL.Models
 
         [Required(ErrorMessage = "Address Required")]
         public Address Address { get; set; } = null!;
+
+        public string? Photo { get; set; }
+
     }
 }
